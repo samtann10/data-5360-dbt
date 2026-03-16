@@ -13,3 +13,10 @@ models:
     description: "Oliver Store Dimension"
   - name: fact_sales
     description: "Insurance Sales Fact"
+  - name: stg_employee_certifications
+    description: "Staging Model for employee certifications.
+                  Each record represents an employee and a certification"
+  - name: fact_certification
+    description: "Employee Certification Fact
+                  The grain of this table is employee + course detail + completion date
+      Each record represents a certification completed by an employee on a given date."
