@@ -1,4 +1,4 @@
-{ config(
+{{ config(
    materialized = 'table',
    schema = 'dw_eco_essentials'
    )
@@ -9,4 +9,4 @@ SELECT
    campaign_id,
    campaign_name,
    campaign_discount
-FROM {{ source('eco_essential_landing', 'promotional_campaign') }}
+FROM {{ source('eco_landing', 'promotional_campaign') }}

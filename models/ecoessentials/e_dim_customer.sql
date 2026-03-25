@@ -1,4 +1,4 @@
-{ config(
+{{ config(
    materialized = 'table',
    schema = 'dw_eco_essentials'
    )

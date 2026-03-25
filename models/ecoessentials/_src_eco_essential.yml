@@ -1,12 +1,14 @@
 version: 2
 
 sources:
- - name: eco_essential_landing
+ - name: eco_essentials_landing
    database: samtanner
-   schema: ECOESSENTIALS_TRANSACTIONAL_DB
+   schema: SAMTANNER.ECO_SOURCE_ECOESSENTIALS_TRANSACTIONAL_DB
    tables:
      - name: customer
-     - name: order
-     - name: order_line
+     - name: orders
+       identifier: ORDER
+     - name: ORDER_LINE
      - name: product
+       identifier: PRODUCT
      - name: promotional_campaign

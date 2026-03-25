@@ -1,6 +1,6 @@
 {{ config(
    materialized = 'table',
-   schema = 'dw_eco_essential'
+   schema = 'dw_eco_essentials'
    )
 }}
 

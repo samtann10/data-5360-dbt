@@ -9,8 +9,10 @@ SELECT
     ol.quantity, 
     ol.discount, 
     o.order_id 
-FROM {{ source('eco_landing', 'order') }} o 
-INNER JOIN {{ source('eco_landing', 'order_line') }} ol ON o.order_id = ol.order_id 
-INNER JOIN {{ source('eco_landing', 'product') }} ps ON ol.product_id = ps.product_id 
-INNER JOIN {{ ref('e_dim_customer') }} cu ON o.customer_id = cu.customer_id INNER JOIN {{ ref('e_dim_campaign') }} c ON ol.campaign_id = c.campaign_id 
-INNER JOIN {{ ref('e_dim_product') }} p ON p.product_id = ol.product_id INNER JOIN {{ ref('e_dim_date') }} d ON d.date_day = o.order_timestamp
+FROM {{source('eco_essential_landing', 'orders')}} o
+INNER JOIN {{source('eco_essential_landing', 'ORDER_LINE')}} ol ON o.order_id = ol.order_id
+INNER JOIN {{source('eco_essential_landing', 'product')}} ps ON ps.product_id = ol.product_id
+INNER JOIN {{ref('e_dim_customer')}} cu ON cu.customer_id = o.customer_id
+INNER JOIN {{ref('e_dim_product')}} p ON p.product_id = ol.product_id
+INNER JOIN {{ref('e_dim_campaign')}} c ON c.campaign_id = ol.campaign_id
+INNER JOIN {{ref('e_dim_date')}} d ON d.date = CAST(o.order_timestamp AS DATE)
