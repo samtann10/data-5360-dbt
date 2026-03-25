@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: eco_emails_landing
+    database: SAMTANNER
+    schema: EMAILS_SOURCE
+    tables:
+      - name: MARKETINGEMAILS
