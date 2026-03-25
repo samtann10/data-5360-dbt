@@ -1,0 +1,12 @@
+version: 2
+
+sources:
+ - name: eco_essential_landing
+   database: samtanner
+   schema: ECOESSENTIALS_TRANSACTIONAL_DB
+   tables:
+     - name: customer
+     - name: order
+     - name: order_line
+     - name: product
+     - name: promotional_campaign
