@@ -11,8 +11,8 @@ with cte_date as (
 
 SELECT
    {{ dbt_utils.generate_surrogate_key(['date_day', 'year_number']) }} as date_key,
-   date_day as date,
-   day_of_week as day,
-   month_of_year as month,
-   year_number as year
+    date_day as date,
+    year_number as year,
+    month_of_year as month,
+    day_of_week as day
 from cte_date

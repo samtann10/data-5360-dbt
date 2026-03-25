@@ -1,6 +1,14 @@
 {{ config( materialized = 'table', schema = 'dw_eco_essentials' ) }} 
 
-SELECT d.date_key, cu.customer_key, p.product_key, c.campaign_key, ps.price, ol.quantity, ol.discount, o.order_id 
+SELECT 
+    d.date_key, 
+    cu.customer_key,
+    p.product_key, 
+    c.campaign_key, 
+    ps.price, 
+    ol.quantity, 
+    ol.discount, 
+    o.order_id 
 FROM {{ source('eco_landing', 'order') }} o 
 INNER JOIN {{ source('eco_landing', 'order_line') }} ol ON o.order_id = ol.order_id 
 INNER JOIN {{ source('eco_landing', 'product') }} ps ON ol.product_id = ps.product_id 
