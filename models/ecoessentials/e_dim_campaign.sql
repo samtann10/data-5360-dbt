@@ -9,4 +9,4 @@ SELECT
    campaign_id,
    campaign_name,
    campaign_discount
-FROM {{ source('eco_landing', 'promotional_campaign') }}
+FROM {{ source('eco_essentials_landing', 'promotional_campaign') }}

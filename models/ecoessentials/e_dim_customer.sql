@@ -16,4 +16,4 @@ SELECT
     customer_zip,
     customer_country,
     customer_email
-FROM {{ source('eco_essential_landing', 'customer') }}
+FROM {{ source('eco_essentials_landing', 'customer') }}
