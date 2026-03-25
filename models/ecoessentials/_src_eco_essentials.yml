@@ -7,7 +7,7 @@ sources:
     tables:
       - name: customer
       - name: orders
-        identifier: ORDER
+        identifier: '"ORDER"'
       - name: order_line
         identifier: ORDER_LINE
       - name: product
