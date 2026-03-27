@@ -14,6 +14,7 @@ SELECT
     customer_city,
     customer_state,
     customer_zip,
-    customer_country,
     customer_email
 FROM {{ source('eco_essentials_landing', 'customer') }}
+
+

@@ -3,7 +3,7 @@
    schema = 'dw_eco_essentials'
 )}}
 
-SELECT
+SELECT DISTINCT
     {{ dbt_utils.generate_surrogate_key(['emailid','emailname']) }} as emailid_key,
     emailid,
     emailname

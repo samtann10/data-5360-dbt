@@ -5,9 +5,8 @@
 }}
 
 with cte_date as (
-{{ dbt_date.get_date_dimension("2020-01-01", "2030-12-31") }}
+{{ dbt_date.get_date_dimension("2025-01-01", "2025-12-31") }}
 )
-
 
 SELECT
    {{ dbt_utils.generate_surrogate_key(['date_day', 'year_number']) }} as date_key,
@@ -16,3 +15,6 @@ SELECT
     month_of_year as month,
     day_of_week as day
 from cte_date
+
+
+

@@ -1,13 +1,13 @@
 {{ config(
-   materialized = 'table',
-   schema = 'dw_eco_essentials'
-)}}
+    materialized = 'table',
+    schema = 'dw_eco_essentials'
+    )
+}}
 
 SELECT
-    {{ dbt_utils.generate_surrogate_key(['emaileventid','eventtype']) }} as event_key,
+    distinct {{ dbt_utils.generate_surrogate_key(['eventtype']) }} as event_key,
     eventtype
 FROM {{ source('eco_emails_landing', 'MARKETINGEMAILS') }}
-
 
 
 
