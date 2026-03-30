@@ -1,18 +1,38 @@
 version: 2
 
 models:
-  - name: oliver_dim_customer
+  - name: oliver_dim_customer 
     description: "Oliver Customer Dimension"
+    columns:
+      - name: state
+        tests:
+          - accepted_values:
+              arguments:
+                values:
+                  - "Utah"
+                  - "Wyoming"
   - name: oliver_dim_date
     description: "Oliver Date Dimension"
   - name: oliver_dim_employee
     description: "Oliver Employee Dimension"
   - name: oliver_dim_product
     description: "Oliver Product Dimension"
+    columns:
+      - name: product_key
+        tests:
+          - unique
+          - not_null
   - name: oliver_dim_store
     description: "Oliver Store Dimension"
   - name: fact_sales
     description: "Insurance Sales Fact"
+    columns:
+      - name: customer_key
+        tests:
+          - relationships:
+              arguments:
+                to: ref('oliver_dim_customer')
+                field: customer_key
   - name: stg_employee_certifications
     description: "Staging Model for employee certifications.
                   Each record represents an employee and a certification"
