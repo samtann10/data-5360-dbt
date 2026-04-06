@@ -16,10 +16,18 @@ LEFT JOIN {{ ref('e_dim_time') }} et
 LEFT JOIN {{ ref('e_dim_date') }} ed
     ON ed.date = TRY_TO_DATE(me.eventtimestamp::VARCHAR)
 LEFT JOIN {{ ref('e_dim_customer') }} c
-    ON TRIM(c.customer_id::VARCHAR) = TRIM(me.customerid::VARCHAR)
+    ON (
+        -- Priority 1: ID Match (only if it's not the string 'NULL')
+        UPPER(TRIM(me.customerid)) != 'NULL' 
+        AND TRIM(c.customer_id::VARCHAR) = TRIM(me.customerid::VARCHAR)
+    )
+     -- Priority 2: Email Match for those 'NULL' string rows
+    OR (UPPER(TRIM(me.customerid)) = 'NULL'
+        AND REPLACE(LOWER(TRIM(c.customer_email)), '''', '') = 
+            REPLACE(LOWER(TRIM(me.subscriberemail)), '''', ''))
 LEFT JOIN {{ ref('e_dim_campaign') }} cg
     ON TRIM(cg.campaign_id::VARCHAR) = TRIM(me.campaignid::VARCHAR)
 LEFT JOIN {{ ref('e_dim_event') }} e
     ON UPPER(TRIM(e.eventtype::VARCHAR)) = UPPER(TRIM(me.eventtype::VARCHAR))
-LEFT JOIN {{ ref('e_dim_emailid') }} ei
+LEFT JOIN {{ ref('e_dim_email') }} ei
     ON TRIM(ei.emailid::VARCHAR) = TRIM(me.emailid::VARCHAR)

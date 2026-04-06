@@ -14,7 +14,7 @@ JOIN {{ source('eco_essentials_landing', 'order_line') }} ol
     ON o.order_id = ol.order_id
 JOIN {{ source('eco_essentials_landing', 'product') }} ps 
     ON ps.product_id = ol.product_id
-JOIN {{ ref('e_dim_customer') }} cu 
+LEFT JOIN {{ ref('e_dim_customer') }} cu 
     ON cu.customer_id = o.customer_id
 JOIN {{ ref('e_dim_product') }} p 
     ON p.product_id = ol.product_id
