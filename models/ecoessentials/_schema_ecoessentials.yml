@@ -1,0 +1,82 @@
+version: 2
+
+models:
+  - name: e_dim_campaign
+    description: "Marketing Campaign Dimension"
+    columns:
+      - name: campaign_discount
+        tests:
+          - not_null
+  - name: e_dim_customer
+    description: "Customer Dimension"
+    columns:
+      - name: customer_key
+        tests:
+          - unique
+  - name: e_dim_date
+    description: "Date Dimension"
+    columns: 
+      - name: date_key
+        tests:
+          - unique
+  - name: e_dim_email
+    description: "Marketing Email Dimenison"
+    columns:
+      - name: emailid
+        tests:
+          - not_null
+  - name: e_dim_event
+    description: "Email Event Dimension"
+    columns:
+      - name: eventtype
+        tests:
+          - accepted_values:
+              arguments:
+                values:
+                  - "SENT"
+                  - "OPEN"
+                  - "CLICK"
+  - name: e_dim_product
+    description: "Product Dimension"
+    columns:
+      - name: product_type
+        tests:
+          - accepted_values:
+              arguments:
+                values:
+                  - "storage"
+                  - "cutting_board"
+                  - "utensil"
+                  - "accessory"
+                  - "pot"
+                  - "pan"
+  - name: e_dim_time
+    description: "Time Dimension"
+    columns:
+      - name: time_key
+        tests:
+          - not_null
+  - name: fact_emailevent
+    description: |
+      Email Events Fact.
+      The grain of this is subscriber + email + interaction
+      Each record represents an interaction a customer had with an email sent for marketing purposes
+    columns:
+      - name: customer_key
+        tests:
+          - relationships:
+              arguments:
+                to: ref('e_dim_customer')
+                field: customer_key
+  - name: fact_itemsold
+    description: |
+      Items Sold Fact.
+      The grain of this is item + customer + date
+      Each record represents an item purchasesed by a customer on a given date.
+    columns:
+      - name: campaign_key
+        tests:
+          - relationships:
+              arguments:
+                to: ref('e_dim_campaign')
+                field: campaign_key
