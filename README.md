@@ -15,7 +15,6 @@ An end-to-end data warehousing solution for **Eco Essentials**, an eco-friendly 
 7. [Business Questions](#business-questions)
 8. [Tech Stack](#tech-stack)
 9. [Repository Structure](#repository-structure)
-10. [How to Run](#how-to-run)
 
 ---
 
