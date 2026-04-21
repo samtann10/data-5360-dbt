@@ -153,6 +153,8 @@ dbt models transform the raw landing data into the dimensional model under the `
 | `fact_itemsold` | Fact | Items purchased by customers |
 | `fact_emailevent` | Fact | Customer interactions with marketing emails |
 
+Model code can be viewed in the [`models/ecoessentials/`](models/ecoessentials/) directory. See individual model files for details.
+
 ### dbt Lineage
 
 ![dbt DAG lineage graph](files/lineage.png)
@@ -240,7 +242,7 @@ Each model includes at least one test. All four built-in dbt test types are used
 
 ### Schema YAML
 
-The full test configuration is defined in [`_schema_ecoessentials.yml`](models/_schema_ecoessentials.yml). See the file for details.
+The full test configuration is defined in [`_schema_ecoessentials.yml`](models/ecoessentials/_schema_ecoessentials.yml). See the file for details.
 
 ### Scheduling
 
