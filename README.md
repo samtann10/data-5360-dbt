@@ -163,6 +163,7 @@ Model code can be viewed in the [`models/ecoessentials/`](models/ecoessentials/)
 ![Snowflake dw_ecoessentials tables in the UI](files/SF_tables.png)
 
 ### Snowflake Test Queries
+```sql
 --What 3 products generate the highest revenue per customer over a specific period?
 SELECT
     p.Product_Type,
@@ -173,9 +174,10 @@ JOIN e_dim_product p ON i.product_key = p.product_key
 GROUP BY p.Product_Type
 ORDER BY Revenue DESC
 LIMIT 3;
+```
 
 ![Query result: top 3 products by revenue per customer](files/Query1.png)
-
+```sql
 --What is the average order value per customer segmented by month?
 SELECT
     d.Month,
@@ -184,9 +186,10 @@ FROM fact_itemsold s JOIN e_dim_date d
     ON s.date_key = d.date_key
 GROUP BY ALL
 ORDER BY d.month;
+```
 
 ![Query result: average order value by month](files/Query2.png)
-
+```sql
 /*How can customers be segmented into engagement tiers based on their email
 interaction behavior, and how does each segment differ in total revenue and purchase
 frequency?*/
@@ -219,6 +222,7 @@ JOIN purchase_data p
     ON e.customer_key = p.customer_key
 GROUP BY EngagementTier
 ORDER BY TotalRevenue DESC;
+```
 
 ![Query result: customer engagement tiers vs revenue](files/Query3.png)
 
