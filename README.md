@@ -7,13 +7,14 @@ An end-to-end data warehousing solution for **Eco Essentials**, an eco-friendly 
 ## Table of Contents
 
 1. [Project Overview](#project-overview)
-2. [Architecture](#architecture)
-3. [Dimensional Modeling](#dimensional-modeling)
-4. [Extract, Load & Transform (ELT)](#extract-load--transform-elt)
-5. [Testing & Scheduling](#testing--scheduling)
-6. [Reporting & Visualization](#reporting--visualization)
-7. [Tech Stack](#tech-stack)
-8. [Repository Structure](#repository-structure)
+2. [Business Questions](#business-questions)
+3. [Architecture](#architecture)
+4. [Dimensional Modeling](#dimensional-modeling)
+5. [Extract, Load & Transform (ELT)](#extract-load--transform-elt)
+6. [Testing & Scheduling](#testing--scheduling)
+7. [Reporting & Visualization](#reporting--visualization)
+8. [Tech Stack](#tech-stack)
+9. [Repository Structure](#repository-structure)
 
 ---
 
@@ -40,6 +41,17 @@ Eco Essentials wants to optimize its data infrastructure to gain deeper insights
 **Marketing email ERD**
 
 ![ERD: Salesforce Marketing Cloud email events](files/Email_ERD.png)
+
+## Business Questions
+
+This warehouse is designed to help Eco Essentials answer practical leadership questions across sales performance, campaign effectiveness, and customer behavior:
+
+1. Which campaigns generate the highest total revenue and strongest click-to-purchase conversion?
+2. Which product categories and product types drive the most revenue by month and by customer segment?
+3. How does average order value change over time, and which months show the strongest performance?
+4. Which customer segments (by engagement tier, geography, or repeat behavior) contribute the most long-term value?
+5. What is the relationship between email engagement events (sent, open, click) and downstream purchases?
+6. Where are marketing drop-off points in the funnel, and which stage has the biggest opportunity for improvement?
 ---
 
 ## Architecture
