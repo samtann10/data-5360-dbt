@@ -12,9 +12,8 @@ An end-to-end data warehousing solution for **Eco Essentials**, an eco-friendly 
 4. [Extract, Load & Transform (ELT)](#extract-load--transform-elt)
 5. [Testing & Scheduling](#testing--scheduling)
 6. [Reporting & Visualization](#reporting--visualization)
-7. [Business Questions](#business-questions)
-8. [Tech Stack](#tech-stack)
-9. [Repository Structure](#repository-structure)
+7. [Tech Stack](#tech-stack)
+8. [Repository Structure](#repository-structure)
 
 ---
 
