@@ -34,6 +34,9 @@ Eco Essentials wants to optimize its data infrastructure to gain deeper insights
 | Transactional Database | Amazon RDS (Postgres) | Online purchase records — orders, customers, products, campaigns |
 | Marketing Email Events | AWS S3 Bucket | Salesforce Marketing Cloud email event data — sends, opens, clicks |
 
+<details>
+  <summary><strong>Source ERDs</strong></summary>
+
 **Transactional database ERD**
 
 ![ERD: transactional database (orders, customers, products, campaigns)](files/TX_ERD.png)
@@ -41,6 +44,8 @@ Eco Essentials wants to optimize its data infrastructure to gain deeper insights
 **Marketing email ERD**
 
 ![ERD: Salesforce Marketing Cloud email events](files/Email_ERD.png)
+
+</details>
 
 ---
 
@@ -157,11 +162,21 @@ Model code can be viewed in the [`models/ecoessentials/`](models/ecoessentials/)
 
 ### dbt Lineage
 
+<details>
+  <summary><strong>dbt Lineage</strong></summary>
+
 ![dbt DAG lineage graph](files/lineage.png)
+
+</details>
 
 ### Snowflake Tables
 
+<details>
+  <summary><strong>Snowflake tables (dw_ecoessentials)</strong></summary>
+
 ![Snowflake dw_ecoessentials tables in the UI](files/SF_tables.png)
+
+</details>
 
 ### Snowflake Test Queries
 <details>
