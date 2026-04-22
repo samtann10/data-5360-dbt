@@ -269,17 +269,29 @@ The full test configuration is defined in [`_schema_ecoessentials.yml`](models/e
 | Fivetran Connectors (×2) | Every 24 hours | Both RDS and S3 connectors set to daily sync |
 | dbt Job | Daily | Builds all fact and dimension models after Fivetran sync completes |
 
-**RDS connector sync**
+<details>
+  <summary><strong>RDS connector sync</strong></summary>
+
 ![Fivetran RDS connector sync configuration](files/rds_sync.png)
+</details>
 
-**S3 connector sync**
+<details>
+  <summary><strong>S3 connector sync</strong></summary>
+
 ![Fivetran S3 connector sync configuration](files/s3_sync.png)
+</details>
 
-**Successful sync run**
+<details>
+  <summary><strong>Successful sync run</strong></summary>
+
 ![Fivetran sync success summary](files/sync_success.png)
+</details>
 
-**dbt schedule**
+<details>
+  <summary><strong>dbt schedule</strong></summary>
+
 ![dbt Cloud job schedule configuration](files/schedule_config.png)
+</details>
 
 ---
 
