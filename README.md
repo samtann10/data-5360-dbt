@@ -25,7 +25,7 @@ Eco Essentials wants to optimize its data infrastructure to gain deeper insights
 | # | Business Process | Goal |
 |---|------------------|------|
 | 1 | **Sales** | Report on the sales of individual items on overall transactions for an individual customer. |
-| 2 | **Marketing Email Conversion** | Report on marketing emails to customers andleads to report on click and purchase rate |
+| 2 | **Marketing Email Conversion** | Report on marketing emails to customers and leads to report on click and purchase rate |
 
 ### Data Sources
 
@@ -164,6 +164,9 @@ Model code can be viewed in the [`models/ecoessentials/`](models/ecoessentials/)
 ![Snowflake dw_ecoessentials tables in the UI](files/SF_tables.png)
 
 ### Snowflake Test Queries
+<details>
+  <summary><strong>Query 1:</strong> Top 3 product types by revenue</summary>
+
 ```sql
 --What 3 products generate the highest revenue per customer over a specific period?
 SELECT
@@ -178,6 +181,11 @@ LIMIT 3;
 ```
 
 ![Query result: top 3 products by revenue per customer](files/Query1.png)
+</details>
+
+<details>
+  <summary><strong>Query 2:</strong> Average order value per customer segmented by month</summary>
+
 ```sql
 --What is the average order value per customer segmented by month?
 SELECT
@@ -190,6 +198,11 @@ ORDER BY d.month;
 ```
 
 ![Query result: average order value by month](files/Query2.png)
+</details>
+
+<details>
+  <summary><strong>Query 3:</strong> Customer engagement tiers, revenue, and purchase frequency</summary>
+
 ```sql
 /*How can customers be segmented into engagement tiers based on their email
 interaction behavior, and how does each segment differ in total revenue and purchase
@@ -226,6 +239,7 @@ ORDER BY TotalRevenue DESC;
 ```
 
 ![Query result: customer engagement tiers vs revenue](files/Query3.png)
+</details>
 
 ---
 
