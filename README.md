@@ -320,6 +320,7 @@ This warehouse is designed to help Eco Essentials answer practical leadership qu
 4. Which customer segments (by engagement tier, geography, or repeat behavior) contribute the most long-term value?
 5. What is the relationship between email engagement events (sent, open, click) and downstream purchases?
 6. Where are marketing drop-off points in the funnel, and which stage has the biggest opportunity for improvement?
+7. How are sales trending over time?
 
 ---
 
